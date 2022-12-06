@@ -6,6 +6,12 @@ project_dedalus_quicksort([X|Xs],Ys) :-
   project_dedalus_quicksort_helper_partition(Xs,X,Left,Right),
   project_dedalus_quicksort(Left,Ls),
   project_dedalus_quicksort(Right,Rs),
+quicksort([],[]).
+quicksort([X],[X]).
+quicksort([X|Xs],Ys) :-
+  partition(Xs,X,Left,Right),
+  quicksort(Left,Ls),
+  quicksort(Right,Rs),
   append(Ls,[X|Rs],Ys).
 
 project_dedalus_quicksort_helper_partition([X|Xs],Y,[X|Ls],Rs) :- 
@@ -15,3 +21,6 @@ project_dedalus_quicksort_helper_partition([X|Xs],Y,Ls,[X|Rs]) :-
   X  > Y, 
   project_dedalus_quicksort_helper_partition(Xs,Y,Ls,Rs).
 project_dedalus_quicksort_helper_partition([],_,[],[]).
+partition([X|Xs],Y,[X|Ls],Rs) :- X =< Y, partition(Xs,Y,Ls,Rs).
+partition([X|Xs],Y,Ls,[X|Rs]) :- X  > Y, partition(Xs,Y,Ls,Rs).
+partition([],_,[],[]).
