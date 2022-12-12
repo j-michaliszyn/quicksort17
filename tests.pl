@@ -3,7 +3,7 @@
 
 test(project_dedalus_quicksort,[nondet]) :-
   L = [4,5,1],
-  project_dedalus_quicksort(L, Sorted), 
+  project_dedalus_quicksort(L, Sorted),
   sort(L, Sorted).
 
 test(quicksort,[nondet]) :-
@@ -15,3 +15,4 @@ test(quicksort,[nondet]) :-
 
 
 :- run_tests.
+
