@@ -6,8 +6,8 @@ test(project_dedalus_quicksort,[nondet]) :-
   project_dedalus_quicksort(L, Sorted), 
   sort(L, Sorted).
 
-test(quicksort,[nondet]) :-
-  L=[8,4,2,1,3,6,5,7,12,10,9,11,14,13,15],
+test(project_dedalus_quicksort,[nondet]) :-
+  randseq(15,15,L),
   project_dedalus_quicksort(L, Sorted),
   sort(L, Sorted).
 
