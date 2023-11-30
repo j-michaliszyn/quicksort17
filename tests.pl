@@ -1,12 +1,12 @@
 :- begin_tests(qs).
 :- use_module(library(lists)).
 
-test(quicksort,[nondet]) :-
+test(project_dedalus_quicksort,[nondet]) :-
   L = [4,5,1],
   project_dedalus_quicksort(L, Sorted), 
   sort(L, Sorted).
 
-test(quicksort,[nondet]) :-
+test(project_dedalus_quicksort,[nondet]) :-
   randseq(15,15,L),
   project_dedalus_quicksort(L, Sorted),
   sort(L, Sorted).
